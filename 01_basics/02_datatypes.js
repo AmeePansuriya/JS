@@ -19,3 +19,17 @@ console.log(typeof "AP");
 console.log(typeof age);
 console.log(typeof null); //object
 console.log(typeof undefined); //undefined
+
+
+//+++++++++++++++++++++ MEMORY ++++++++++++++++++++++
+
+// Stack (primitive)=>you get a copy of the declared variable
+// Heap (non-primitive)=> you get reference of original value
+
+let  myName = "AP"
+
+let anotherName = myName
+anotherName = "APansuriya"
+console.log(myName);
+console.log(anotherName);
+
