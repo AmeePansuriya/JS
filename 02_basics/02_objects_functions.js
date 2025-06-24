@@ -82,28 +82,61 @@
 //_________________Destructuring__________________________
 
 
-const course = {
-    coursename: "c1",
-    price: "999",
-    courseInstructor: "xyz"
-}
+// const course = {
+//     coursename: "c1",
+//     price: "999",
+//     courseInstructor: "xyz"
+// }
 
-//course.courseInstructor
-const {courseInstructor: instructor} = course //destuctured courseInsturctor so we dont have to write it each time 
-console.log(instructor); //we can now just use instructor instead of courseInsturctor
+// //course.courseInstructor
+// const {courseInstructor: instructor} = course //destuctured courseInsturctor so we dont have to write it each time 
+// console.log(instructor); //we can now just use instructor instead of courseInsturctor
 
 
 
 
 //-------------------------FUNCTIONS-------------------------------------
 
-function calculateCartPrice(...num1){ //... => for rest and spread both 
-    return num1
-}
-console.log(calculateCartPrice(200, 400, 5000, 1000));
+// function calculateCartPrice(...num1){ //... => for rest and spread both 
+//     return num1
+// }
+// console.log(calculateCartPrice(200, 400, 5000, 1000));
  
 
 // function calculateCartPrice(val1, val2, ...num1){ //stores 1st value in val1, 2 in val2 and rest in num1
 //     return num1
 // }
 // console.log(calculateCartPrice(200, 400, 5000, 1000));
+
+
+
+//----------------------arrow func---------------------
+
+//explicit way (used when multiple lines are in function) (if you are using{} the you have to write return)
+// const addTwoNum = (Num1, Num2) => {
+//     return Num1 + Num2
+// }
+// console.log(addTwoNum(3, 4))
+
+
+//implicit way (used for single lines)
+// const addTwoNum = (Num1, Num2) => (Num1 + Num2)
+// console.log(addTwoNum(3, 4))
+
+
+
+//--------------------------this(used for current context)----------------------
+
+const user = {
+    username: "AP",
+    userId: 1234,
+
+    welcomeMessage: function () {
+        console.log(`welcome to website ${this.username}`);
+    }
+}
+user.welcomeMessage();
+
+  //if you update the username afterwards, it will show the changed(new) name only
+user.username = "APansuriya" //changed
+user.welcomeMessage();
